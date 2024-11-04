@@ -17,5 +17,6 @@ spec:
       containers:
         - name: mobile-net
           image: paidjkim/fastapi:main
+          imagePullPolicy: Always
           ports:
             - containerPort: 8000
