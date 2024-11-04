@@ -20,3 +20,19 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mobile-net
+  namespace: fastapi
+  labels:
+    app: mobile-net
+spec:
+  type: NodePort
+  selector:
+    app: mobile-net
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30000
