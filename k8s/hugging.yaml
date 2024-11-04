@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mobileNet
+  name: mobile-net
   namespace: fastapi
 spec:
   revisionHistoryLimit: 1
   replicas: 1
   selector:
     matchLabels:
-      app: mobileNet
+      app: mobile-net
   template:
     metadata:
       labels:
-        app: mobileNet
+        app: mobile-net
     spec:
       containers:
-        - name: mobileNet
+        - name: mobile-net
           image: paidjkim/fastapi:main
           ports:
             - containerPort: 8000
